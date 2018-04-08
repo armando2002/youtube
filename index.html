@@ -7,6 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>YouTube Searcher</title>
+        <link href="main.css" rel="stylesheet" type="text/css" />
         <meta name="description" content="Search YouTube via API">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -15,11 +16,18 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <header class="heading" role="banner">Search YouTube Videos:</header>
+        <br>
         <form class="form" id="js-form">
             <input type="text" name="text-entry" id="text-entry" placeholder="e.g. The Matrix">
-            <button type="submit">S</button>
+            <button type="submit">Search</button>
         </form>
         <main role="main" clas="js-main">
+            <h2>Results:</h2>
+            <div id="results">
+            </div>
         </main>
+        <script src="index.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/client.js"></script>
     </body>
 </html>
