@@ -22,6 +22,7 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
   }
 */
 
+// 2nd try
 $(function() {
     $("form").on("submit", function(e) {
         e.preventDefault();
