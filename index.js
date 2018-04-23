@@ -5,48 +5,25 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 
 // AJAX Function
 // 1st try
-/* function getDataFromApi(searchTerm, callback) {
-    const settings = {
-      url: YOUTUBE_SEARCH_URL,
-      data: {
-        part: 'snippet',
-        key: API_KEY,
-        q: `${searchTerm}`,
-      },
-      dataType: 'json',
-      type: 'GET',
-      success: callback
-    };
-  
-    $.ajax(settings);
-  }
-*/
-
-// 2nd try
 $(function() {
     $("form").on("submit", function(e) {
         e.preventDefault();
-        // prepare request
-        var request = gapi.client.youtube.search.list({
-            part:"snippet",
-            type:"video",
-            q: encodeURIComponent($("#text-entry").val()).replace(/%20/g, "+"),
-            maxResults: 5,
-            order: "viewCount"
-        });
-        // execute the request
-        request.execute(function(response) {
-            console.log(response);
-        });
-    });
-});
-
-$(function init() {
-    gapi.client.setApiKey(API_KEY);
-    gapi.client.load("youtube", "v3", function() {
-        // api is ready
-    });
-});
+        console.log("input received");
+        function getDataFromApi(searchTerm, callback) {
+            const settings = {
+            url: YOUTUBE_SEARCH_URL,
+            data: {
+                part: 'snippet',
+                key: API_KEY,
+                q: `${searchTerm}`,
+            },
+            dataType: 'json',
+            type: 'GET',
+            success: callback
+            };
+  
+    $.ajax(settings);
+  };
 
 // write function to listen for form input
 
