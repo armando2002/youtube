@@ -5,27 +5,30 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 
 // AJAX Function
 // 1st try
-$(function() {
-    $("form").on("submit", function(e) {
-        e.preventDefault();
-        console.log("input received");
-        function getDataFromApi(searchTerm, callback) {
-            const settings = {
-            url: YOUTUBE_SEARCH_URL,
-            data: {
-                part: 'snippet',
-                key: API_KEY,
-                q: `${searchTerm}`,
-            },
-            dataType: 'json',
-            type: 'GET',
-            success: callback
-            };
-  
-    $.ajax(settings);
-  };
+// event listener for form input
+$("form").on("submit", function(e) {
+    e.preventDefault();
+    // debug event listener success
+    console.log("input received");
+    // function to pull from API
+    function getDataFromApi(searchTerm, callback) {
+        const settings = {
+        url: YOUTUBE_SEARCH_URL,
+        data: {
+            part: 'snippet',
+            key: API_KEY,
+            q: `${searchTerm}`,
+        },
+        dataType: 'json',
+        type: 'GET',
+        success: callback
+        };
 
-// write function to listen for form input
+$.ajax(settings);
+
+// add function to console.log JSON result
+});
+
 
 
 // write function to push results to page
